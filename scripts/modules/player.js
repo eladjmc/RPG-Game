@@ -15,17 +15,17 @@ const selectors = {
       def: document.getElementById("add-def"),
     },
   },
-
 };
 const statsDictionary = {
-  hp: 'hp',
-  str: 'str',
-  dex: 'dex',
-  def: 'def',
+  maxHp: "maxHp",
+  currentHp: "currentHp",
+  str: "str",
+  dex: "dex",
+  def: "def",
 };
 
 export default class Player {
-  constructor(name='Player') {
+  constructor(name = "Player") {
     this.maxHp = 100;
     this.currentHp = 100;
     this.name = name;
@@ -38,8 +38,8 @@ export default class Player {
     this.playerStatsWindowHandler();
   }
 
-  isStatsWindowClosed(){ 
-    return selectors.playerStatsPage.style.display == 'none'
+  isStatsWindowClosed() {
+    return selectors.playerStatsPage.style.display == "none";
   }
 
   getPlayerStatsPage() {
@@ -51,45 +51,35 @@ export default class Player {
 
   playerStatsWindowHandler() {
     this.updatePlayerStatsUI();
-    selectors.playerStats.addStatsButtons.maxHp.addEventListener("click", ()=>{
+    selectors.playerStats.addStatsButtons.maxHp.addEventListener(
+      "click",
+      () => {
         this.addStat(statsDictionary.hp);
+      }
+    );
+    selectors.playerStats.addStatsButtons.str.addEventListener("click", () => {
+      this.addStat(statsDictionary.str);
     });
-    selectors.playerStats.addStatsButtons.str.addEventListener("click", ()=>{
-        this.addStat(statsDictionary.str);
+    selectors.playerStats.addStatsButtons.dex.addEventListener("click", () => {
+      this.addStat(statsDictionary.dex);
     });
-    selectors.playerStats.addStatsButtons.dex.addEventListener("click", ()=> {
-        this.addStat(statsDictionary.dex);
-    });
-    selectors.playerStats.addStatsButtons.def.addEventListener("click", ()=>{
-        this.addStat(statsDictionary.def);
+    selectors.playerStats.addStatsButtons.def.addEventListener("click", () => {
+      this.addStat(statsDictionary.def);
     });
   }
 
-  addStat(statStr){
-    if(this.freePoints > 0){
-        this.freePoints--;
-    switch (statStr) {
-        case statsDictionary.hp:
-            this.maxHp += 10;
-            this.currentHp = this.maxHp;
-            break;
-        case statsDictionary.str:
-            this.str += 1;
-            break;
-
-        case statsDictionary.dex:
-            this.dex += 1;
-            break;
-
-        case statsDictionary.def:
-            this.def += 1;
-            break;
-    
-        default:
-            break;
+  addStat(statStr) {
+    if (this.freePoints <= 0) {
+      return;
+    }
+    this.freePoints--;
+    if (statStr !== statsDictionary.hp) {
+      this[statStr] += 1;
+    } else {
+      this.maxHp += 10;
+      this.currentHp = this.maxHp;
     }
     this.updatePlayerStatsUI();
-    }
   }
 
   updatePlayerStatsUI() {
