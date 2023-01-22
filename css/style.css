@@ -1,0 +1,136 @@
+.starting-page {
+    height: 100vh;
+    width: 100%;
+    background-color: bisque;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.starting-page > h1 {
+    font-size: 4rem;
+    padding-bottom: 4rem;
+}
+
+.start-game-btn {
+    font-size: 2.2rem;
+    width:  16rem;
+    height: 5rem;
+    background-color: brown;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid rgb(99, 26, 26);
+}
+
+.start-game-btn:hover {
+    background-color: bisque;
+    color: rgb(99, 26, 26) ;
+    font-weight: 500;
+}
+
+
+
+
+.world-map{
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 100%;
+    height: 100vh;
+    background-color: #1e9eb7;
+    display: none;
+
+}
+.map-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.map-container >h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+.map-image {
+    width: 55rem;
+    height: 25rem;
+    background: url("/assets/images/map.png") no-repeat center center/cover;
+    border: black 1px solid;
+  }
+
+  .map-location {
+    border: black 1.5px solid;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    background-color: aliceblue;
+    transition: all 0.2s linear;
+  }
+  .map-location:hover {
+    color: rgb(2, 37, 0);
+    background-color: rgb(52, 247, 52);
+  }
+
+  .villages {
+    display: flex;
+    gap: 7rem;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .util-bar {
+    margin-top: 10rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.6rem;
+    background-color: rgb(28, 24, 249);
+    color: white;
+  }
+
+  .util-btn{
+    cursor: pointer;
+  }
+
+  .util-bar .gold-color{
+    color: rgb(255, 225, 1);
+    font-weight: bold;
+  }
+  .potion-image{
+    width: 5rem;
+    height: 7rem;
+    background: url("/assets/images/potion.gif") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 18px;
+    color: rgb(14, 14, 14);
+    font-size: 2.2rem;
+    font-weight: 900;
+  }
+
+  .buy-potions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buy-btn {
+    background-color: white;
+    color: black;
+    width: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .5rem;
+  }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stats_window.css">
+    <title>RPG game</title>
+</head>
+
+<body>
+    <section id="starting-page" class="starting-page">
+        <h1>Welcome to RPG Game</h1>
+        <button id="start-game-btn" class="start-game-btn">Start Game</button>
+    </section>
+
+
+    <section class="player-stats-page">
+        <h1><span class="player-name">Player</span>'s stats:</h1>
+        <span>Free points : <span id="free-points-display">0</span></span>
+        <div class ="player-stats-container">
+            <div class="left-player-stats">
+                <div class="level">
+                    <span>Level:</span><span class="player-level"> 1</span>
+                </div>
+                <div class="xp">
+                    <span>XP:</span><span class="curent-xp"> 0/</span><span class="max-xp">100</span>
+                </div>
+                <div class="stat">
+                    <span>HP:</span><span class="player-max-hp">0</span>
+                    <div id="add-hp" class="add-stat-btn">+</div>
+                </div>
+                <div class="stat">
+                    <span>STR:</span><span class="player-str">0</span>
+                    <div id="add-str" class="add-stat-btn">+</div>
+                </div>
+                <div class="stat">
+                    <span>DEX:</span><span class="player-dex">0</span>
+                    <div id="add-dex" class="add-stat-btn">+</div>
+                </div>
+                <div class="stat">
+                    <span>DEF:</span><span class="player-def">0</span>
+                    <div id="add-def" class="add-stat-btn">+</div>
+                </div>
+            </div>
+            <div class="right-player-stats">
+                <div class="image-of-player-container">
+                    <div class="image-of-player"></div>
+                </div>
+            </div>
+        </div>
+        <div class="done-stats-btn">DONE</div>
+    </section>
+
+
+
+    <section class="world-map">
+        <div class="map-container">
+            <h1>World Map</h1>
+            <div class="map-image"></div>
+            <div class="villages">
+                <div class="map-location-one map-location">loc1</div>
+                <div class="map-location-two map-location">loc2</div>
+                <div class="map-location-three map-location">loc4</div>
+                <div class="map-location-four map-location">loc5</div>
+            </div>
+            <div class="util-bar">
+                <div class="player-stats-btn util-btn">Stats</div>
+                <div class="gold-display">GOLD: <span class="gold-display gold-color" >10G</span></div>
+                <div class ="buy-potions">
+                    <div class="buy-btn util-btn">+</div>
+                    <div class="potion-image"><span class="potions-amount">0</span></div>
+                    <span class="cost gold-color">10G</span>
+                </div>
+                <div class="win-btn-container">
+                    <div class="win-btn util-btn">WIN GAME</div>
+                    <span class="win-condition-text">Cost: <span class="gold-color"> 1000G</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="village"></section>
+    <section class="billboard"></section>
+    <section class="fight-scene"></section>
+    <section class="lose-scene"></section>
+    <script type="module" src="/scripts/main.js"></script>
+</body>
+
+</html>
